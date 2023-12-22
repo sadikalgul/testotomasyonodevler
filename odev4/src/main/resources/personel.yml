@@ -1,0 +1,11 @@
+personal:
+  name: Sadık Algül
+  age: 42
+  title: Muhendis
+  department: Strateji ve Kontrol
+  address:
+    street: Ziya Gokalp
+    city: Sancaktepe
+    state: Istanbul
+    zipcode: 34885
+  email: sadik@example.com

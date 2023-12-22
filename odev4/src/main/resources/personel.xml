@@ -1,0 +1,13 @@
+<personal>
+    <name>Sadık Algül</name>
+    <age>42</age>
+    <title>Muhendis</title>
+    <department>Strateji ve Kontrol</department>
+    <address>
+        <street>Ziya Gokalp</street>
+        <city>Sancaktepe</city>
+        <state>Istanbul</state>
+        <zipcode>34885</zipcode>
+    </address>
+    <email>sadik@example.com</email>
+</personal>
