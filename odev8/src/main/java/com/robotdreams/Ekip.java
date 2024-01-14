@@ -23,13 +23,15 @@ public class Ekip {
         personelList.remove(personel);
     }
 
-/*    public void updatePersonel(Personel person)
+    public void updatePersonel(Personel person,String updateSurname)
     {
         Optional<Personel> findPersonel = personelList.stream().filter(personel -> Objects.equals(personel.getName(), person.getName())).findFirst();
         if (findPersonel.isPresent()){
             Personel personel = findPersonel.get();
+            personel.setSurName(updateSurname);
+            //System.out.println(personel);
         }
-    }*/
+    }
 
     public void addUpdateTask(String task,Boolean status){
         taskList.put(task,status);

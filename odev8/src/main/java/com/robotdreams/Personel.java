@@ -4,7 +4,7 @@ import java.util.Date;
 
 public abstract class Personel {
     private final String name;
-    private final String surName;
+    private String surName;
     private final Date birtDate;
 
     public Personel(String name, String surName, Date birtDate) {
@@ -25,5 +25,18 @@ public abstract class Personel {
 
     public Date getBirtDate() {
         return birtDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Personel{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", birtDate=" + birtDate +
+                '}';
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 }
