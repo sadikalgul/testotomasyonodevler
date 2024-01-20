@@ -54,6 +54,7 @@ public class Main {
                     @Override
                     public void accept(Personel personel) {
                         System.out.println(personel);
+                        System.out.println("Retire Date:" + personel.getRetireDate().toString());
                     }
                 });
                 Map<String,Boolean> taskMap = ekip.getTaskList();
