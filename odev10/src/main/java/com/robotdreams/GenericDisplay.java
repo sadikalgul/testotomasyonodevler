@@ -11,8 +11,8 @@ public class GenericDisplay<T,U> {
     }
 
     public void print(){
-        System.out.println(obj1);
-        System.out.println(obj2);
+        System.out.println("First Value:" + obj1);
+        System.out.println("Second Value:"+ obj2);
     }
     @Override
     public String toString() {
