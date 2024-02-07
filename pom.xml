@@ -19,6 +19,7 @@
         <module>odev9</module>
         <module>odev10</module>
         <module>odev11</module>
+        <module>odev12</module>
     </modules>
 
     <properties>
