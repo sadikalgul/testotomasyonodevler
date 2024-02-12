@@ -12,9 +12,9 @@ import static org.testng.Assert.assertEquals;
 public class PersonalTest {
 
     List<Personal> personalList = new ArrayList<>();
-    @BeforeTest
+    @BeforeTest(groups = "unit")
     public void createPersonal(){
-        System.out.println("createPersonal");
+       // System.out.println("createPersonal");
         personalList.add(new Personal(1,"sadik","algul","otomasyon",750.55d,1000.00d));
         personalList.add(new Personal(2,"serkan","cura","otomasyon",250.55d,1000.00d));
     }
@@ -26,7 +26,7 @@ public class PersonalTest {
 
     @Test(groups = "unit")
     public void checkNames(){
-        System.out.println("checkNames");
+        //System.out.println("checkNames");
         assertEquals("sadik",personalList.stream().filter(personal -> personal.getId() == 1).findFirst().get().getName());
         assertEquals("serkan",personalList.stream().filter(personal -> personal.getId() == 2).findFirst().get().getName());
 

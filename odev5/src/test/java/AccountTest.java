@@ -14,9 +14,9 @@ public class AccountTest {
 
     List<Personal> personalList = new ArrayList<>();
     Account account;
-    @BeforeTest
+    @BeforeTest(groups = "unit")
     public void createAccount(){
-        System.out.println("createPersonal");
+        //System.out.println("createPersonal");
         personalList.add(new Personal(1,"sadik","algul","otomasyon",750.55d,1000.00d));
         personalList.add(new Personal(2,"serkan","cura","otomasyon",250.55d,1000.00d));
         account = new Account(personalList);
