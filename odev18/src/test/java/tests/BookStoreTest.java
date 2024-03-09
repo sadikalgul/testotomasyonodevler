@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static helpers.HelperMethods.checkStatus;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BookStoreTest {
 
     BookStoreHelper bookStoreHelper = new BookStoreHelper();
-    String userId;
 
     @Test(description = "Get All Books",priority = 1)
     public void getAllBooks(){
@@ -31,13 +31,23 @@ public class BookStoreTest {
         }*/
 
         List<BookDetails> allBooksList = jsonPath.getList("books", BookDetails.class);
-
-        // Iterate over the list and print individual book item
-        // Note that every book entry in the list will be complete Json object of book
         for(BookDetails book : allBooksList)
         {
             System.out.println("Book: " + book.getTitle());
         }
+        assertThat(allBooksList.size()).isEqualTo(8); // book list size must be 8
+
+    }
+
+    @Test(description = "Get Max Page Books",priority = 2)
+    public void getMaxPagesBooks(){
+        Response response = bookStoreHelper.getAllBooks();
+        checkStatus(response, 200);
+        JsonPath jsonPath = response.getBody().jsonPath();
+        List<BookDetails> allBooksList = jsonPath.getList("books", BookDetails.class);
+        BookDetails bookDetails = allBooksList.stream().reduce((bookDetails1, bookDetails2) -> bookDetails1.getPages() > bookDetails2.getPages() ? bookDetails1:bookDetails2).get();
+        assertThat(bookDetails.getTitle()).isEqualTo("Eloquent JavaScript, Second Edition"); // book list size must be 8
+
 
     }
 
