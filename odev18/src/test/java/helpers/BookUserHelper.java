@@ -5,6 +5,9 @@ import com.robotdreams.config.BookStoreAPIConstant;
 import io.restassured.response.Response;
 import models.request.BookUserRequest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class BookUserHelper extends RestAssuredClient {
     public BookUserHelper() {
         super(BookStoreAPIConstant.APIUrl.BASE_URL);
@@ -28,8 +31,11 @@ public class BookUserHelper extends RestAssuredClient {
         return post("/GenerateToken", null, null, bookUserRequest);
     }
 
-    public Response getUserWithId(String id){
-        return get("/User/"+id,null,null,null);
+    public Response getUserWithId(String id,String token){
+
+        Map<String, Object> header = new HashMap<>();
+        header.put("Authorization",token);
+        return get("/User/"+id,null,header,null);
     }
 
 }
