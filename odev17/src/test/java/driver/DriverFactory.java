@@ -42,7 +42,7 @@ public class DriverFactory {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
-        Configuration.screenshots = false;
+        Configuration.screenshots = true;  // enable screenshot
         //Configuration.timeout = 10000;
         //Configuration.pageLoadTimeout = 30000;
 

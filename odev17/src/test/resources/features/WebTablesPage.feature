@@ -7,4 +7,4 @@ Feature: As a User I want to add/update personal to webTables
     When I press ADD buttons
     And  I add new personal
     And  I update newly added personal
-    Then I can see personal name 'ECE'
+    Then I can see personal name 'EFE'
